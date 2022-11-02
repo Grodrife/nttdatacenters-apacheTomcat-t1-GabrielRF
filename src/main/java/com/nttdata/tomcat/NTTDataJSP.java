@@ -2,29 +2,35 @@ package com.nttdata.tomcat;
 
 /**
  * 
- * Taller práctico Apache Tomcat - JSP
+ * Taller practico Apache Tomcat - JSP
  * 
- * @author Gabriel Rodríguez Félix
+ * @author Gabriel Rodriguez Felix
  *
  */
 public class NTTDataJSP {
 
 	/**
-	 * Constructor
+	 * Constructor vacio
 	 */
 	private NTTDataJSP() {
 
 	}
 
-	public static String nameChars(String name) {
-		String message = "";
-
+	/**
+	 * Metodo para la separacion de los caracteres del String pasado por parametro 
+	 * 
+	 * @param name
+	 * @return StringBuilder
+	 */
+	public static StringBuilder nameChars(String name) {
+		StringBuilder message = new StringBuilder();
+		// En caso de estar vacio el String, se devuelve un mensaje en concreto
 		if (name.equals("")) {
-			message += "El nombre no ha sido introducido";
+			message.append("El nombre no ha sido introducido");
 		} else {
 			char[] nameChars = name.toCharArray();
 			for (int i = 0; i < nameChars.length; i++) {
-				message += nameChars[i] + ", ";
+				message.append(nameChars[i] + ", ");
 			}
 		}
 
